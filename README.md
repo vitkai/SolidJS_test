@@ -31,4 +31,15 @@ Next steps:
 
 To close the dev server, hit Ctrl-C
 ```
+### pnpm issue resolved by installation of node 18 instead of 14
 
+`pnpm create solid@latest`
+
+```
+Next steps:
+  1: cd bare
+  2: pnpm install
+  3: pnpm run dev --open
+
+To close the dev server, hit Ctrl-C
+```
