@@ -43,3 +43,16 @@ Next steps:
 
 To close the dev server, hit Ctrl-C
 ```
+
+# Tutorial
+https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/
+
+## installation
+`npx degit solidjs/templates/ts tutorial`
+
+## run
+```
+npm install # or yarn or pnpm
+npm run dev # or yarn or pnpm
+```
+
