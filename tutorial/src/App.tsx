@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { HelloWorld } from './HelloWorld';
+import { HelloWorld } from './components/HelloWorld';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
