@@ -15,6 +15,14 @@ Powershell:
 ## pnpm
 `npm install -g pnpm`
 
+## Enable PowerShell scripts execution
+In admin PowerShell console run:
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
+
+### Restrict PowerShell scripts execution
+In admin PowerShell console run:
+` Set-ExecutionPolicy -ExecutionPolicy Restricted`
+
 ## create project
 `pnpm create solid@latest`
 fails with:
