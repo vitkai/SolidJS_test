@@ -20,13 +20,13 @@ function Bookshelf(props: BookshelfProps) {
     <div>
       <h1>{props.name}'s Bookshelf</h1>
       <BookList books={books()} />
-      <AddBook />
+      <AddBook setBooks={setBooks} />
     </div>
   );
 }
 function App() {
   return (
-    <Bookshelf name="solid"/>
+    <Bookshelf name="Solid"/>
   );
 }
 export default App;
