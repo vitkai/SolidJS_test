@@ -37,5 +37,5 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 
 # Stopped at
-https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/adding-interactivity-with-state
-Test-driving our app
+https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/control-flow
+Revisiting the bookshelf
