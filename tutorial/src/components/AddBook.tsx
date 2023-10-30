@@ -3,38 +3,29 @@ import { Book } from "../App";
 export interface AddBookProps {
   setBooks: Setter<Book[]>;
 }
-const emptyBook: Book = { title: "", author: "" };
 export function AddBook(props: AddBookProps) {
-  const [newBook, setNewBook] = createSignal(emptyBook);
-  const addBook: JSX.EventHandler<HTMLButtonElement, MouseEvent> = (event) => {
-    event.preventDefault();
-    props.setBooks((books) => [...books, newBook()]);
-    setNewBook(emptyBook);
-  };
+  const [input, setInput] = createSignal("");
+  const [query, setQuery] = createSignal("");
   return (
     <form>
       <div>
-        <label for="title">Book name</label>
+        <label for="title">Search books</label>
         <input
           id="title"
-          value={newBook().title}
+          value={input()}
           onInput={(e) => {
-            setNewBook({ ...newBook(), title: e.currentTarget.value });
+            setInput(e.currentTarget.value);
           }}
         />
       </div>
-      <div>
-        <label for="author">Author</label>
-        <input
-          id="author"
-          value={newBook().author}
-          onInput={(e) => {
-            setNewBook({ ...newBook(), author: e.currentTarget.value });
-          }}
-        />
-      </div>
-      <button type="submit" onClick={addBook}>
-        Add book
+      <button
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          setQuery(input());
+        }}
+      >
+        Search
       </button>
     </form>
   );

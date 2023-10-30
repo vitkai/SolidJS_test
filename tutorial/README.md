@@ -37,5 +37,5 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 
 # Stopped at
-https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/control-flow
-Revisiting the bookshelf
+https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/fetching-data
+Fetching data for the bookshelf
