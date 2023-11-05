@@ -1,15 +1,14 @@
 # Tutorial
-https://docs.solidjs.com/guides/tutorials/getting-started-with-solid/
+https://dev.to/codewithahsan/solidjs-crash-course-building-a-rest-api-client-part-1-57ee
 
 ## installation
-`npx degit solidjs/templates/ts tutorial`
+`npx degit solidjs/templates/ts tut-solid-rest-client-app`
 
 ## run
 ```
 npm install # or yarn or pnpm
 npm run dev # or yarn or pnpm
 ```
-
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
@@ -45,9 +44,6 @@ Your app is ready to be deployed!
 
 You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
 
-# Further steps
-
-
 # Stopped at
-https://docs.solidjs.com/guides/troubleshooting-and-faq/faq
-Completed
+https://dev.to/codewithahsan/solidjs-crash-course-building-a-rest-api-client-part-1-57ee
+Add ESLint
