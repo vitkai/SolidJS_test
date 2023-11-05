@@ -46,4 +46,4 @@ You can deploy the `dist` folder to any static host provider (netlify, surge, no
 
 # Stopped at
 https://dev.to/codewithahsan/solidjs-crash-course-building-a-rest-api-client-part-1-57ee
-Add ESLint
+Navigation and Routing
