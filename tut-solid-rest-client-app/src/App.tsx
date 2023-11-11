@@ -1,27 +1,20 @@
 import type { Component } from 'solid-js';
-
-import logo from './logo.svg';
 import styles from './App.module.css';
+import { hashIntegration, Route, Router, Routes } from 'solid-app-router';
+import Navbar from './components/Navbar';
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-        <ion-icon name="accessibility-outline"></ion-icon>
-      </header>
-    </div>
+      <Router source={hashIntegration()}>
+      <div class={styles.App}>
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" component={() => <div>Home Component</div>}></Route>
+        <Route path="/about" component={() => <div>About Component</div>}></Route>
+      </Routes>
+      <ion-icon name="accessibility-outline"></ion-icon>
+    </Router>
   );
 };
 
