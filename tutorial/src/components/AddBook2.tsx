@@ -3,10 +3,10 @@ import { searchBooks } from "./searchBooks";
 import { Book } from "../types";
 
 export interface AddBookProps {
-  setBooks: Setter<Book[]>;
+  addNewBook: (book: Book) => void
 }
 
-export function AddBook(props: AddBookProps) {
+export function AddBook2(props: AddBookProps) {
   const [input, setInput] = createSignal("");
   const [query, setQuery] = createSignal("");
   const [data] = createResource<Book[], string>(query, searchBooks);
@@ -43,7 +43,7 @@ export function AddBook(props: AddBookProps) {
                   aria-label={`Add ${book.title} by ${book.author} to the bookshelf`}
                   onClick={(e) => {
                     e.preventDefault();
-                    props.setBooks((books) => [...books, book]);
+                    props.addNewBook(book)
                   }}
                 >
                   Add

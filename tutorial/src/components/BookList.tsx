@@ -1,15 +1,18 @@
-import { For } from "solid-js";
-import { Book } from "../App";
+import { Accessor, For } from "solid-js";
+import { Book } from "../types";
+
 interface BookListProps {
-  books: Book[];
+  books: Accessor<Book[] | undefined>;
 }
+
 export function BookList(props: BookListProps) {
-  const totalBooks = () => props.books.length;
+  const totalBooks = () => props.books()?.length;
+
   return (
     <>
       <h2>My books ({totalBooks()})</h2>
       <ul>
-        <For each={props.books}>
+        <For each={props.books()}>
           {(book) => {
             return (
               <li>
