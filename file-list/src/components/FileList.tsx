@@ -11,20 +11,17 @@ export const FileList = () => {
   const [files, setFiles] = createSignal<File[]>([]);
   const [showTreeView, setShowTreeView] = createSignal(false);
 
-  const addFiles = async (event: Event) => {
+  const addUniqFiles = async (event: Event) => {
     const input = event.target as HTMLInputElement;
-    console.log(`FileList: input.files: ${input.files}`)
-    console.log(`FileList: input.files.item: ${input.files?.value}`)
     const newFiles = Array.from(input.files || []);
-    console.log(`FileList: newFiles: ${newFiles}`)
-    newFiles.forEach(file => console.log(`newFiles ${file.name} ${file.size}`));
 
-    // const updatedFiles = newFiles.map(processFile);
-    // updatedFiles.forEach(file => console.log(`updatedFiles ${file.name} ${file.size}`));
-    // console.log(`updatedFiles: ${updatedFiles}`)
-    // setFiles([...files(), ...updatedFiles]);
-    setFiles([...files(), ...newFiles]);
+    const uniqueFiles = new Set(files().map((file) => file.name));
+    const updatedFiles = newFiles.filter((file) => !uniqueFiles.has(file.name))
+    const sortedFiles = [...files(), ...updatedFiles].sort((a, b) => a.name.localeCompare(b.name));
+
+    setFiles(sortedFiles);
   };
+  
 
   // const processFile = (file: File) => {
   //   // Additional processing logic for files and directories can be added here
@@ -82,7 +79,7 @@ export const FileList = () => {
       <div>
         <label>
           Add Files:
-          <input type="file" accept='audio/*, video/*' multiple onChange={addFiles} />
+          <input type="file" accept='audio/*, video/*' multiple onChange={addUniqFiles} />
         </label>
       </div>
       {/* <button onClick={toggleTreeView}>Toggle Tree View</button> */}
