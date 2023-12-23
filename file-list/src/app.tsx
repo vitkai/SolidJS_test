@@ -20,6 +20,7 @@ export default function App() {
         </a>{" "}
         to learn how to build SolidStart apps.
       </p> */}
+      
     </main>
   );
 }
