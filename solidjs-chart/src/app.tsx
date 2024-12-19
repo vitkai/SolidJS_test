@@ -3,7 +3,7 @@ import "./app.css";
 
 import { onMount } from 'solid-js'
 import { Chart, Title, Tooltip, Legend, Colors } from 'chart.js'
-import { Line } from 'solid-chartjs'
+import { Bar, Doughnut, Line, Pie, PolarArea, Radar, Scatter } from 'solid-chartjs'
 
 const MyChart = () => {
   /**
@@ -21,16 +21,29 @@ const MyChart = () => {
               label: 'Sales',
               data: [50, 60, 70, 80, 90],
           },
+          {
+              label: 'Sales02',
+              data: [10, 15, 13, 18, 29],
+          },
+          {
+            label: 'Vertical',
+            data: [, , 0, , ],
+        },
+
       ],
   }
+  
   const chartOptions = {
       responsive: true,
       maintainAspectRatio: false,
+      fill: 2,
   }
 
   return (
       <div>
-          <Line data={chartData} options={chartOptions} width={500} height={500} />
+          {/* <Doughnut data={chartData} options={chartOptions} width={500} height={500} /> */}
+          <Line data={chartData} options={chartOptions}/>
+          {/* <Line data={chartData2} options={chartOptions} width={100} height={100} /> */}
       </div>
   )
 }
