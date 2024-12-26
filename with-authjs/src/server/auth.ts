@@ -1,12 +1,20 @@
-import DiscordProvider from "@auth/core/providers/discord";
-import type { SolidAuthConfig } from "@solid-auth/base";
+import { type SolidAuthConfig } from "@solid-mediakit/auth";
+import Discord from "@auth/core/providers/discord";
+import { serverEnv } from "~/env/server";
+
+declare module "@auth/core/types" {
+  export interface Session {
+    user?: DefaultSession["user"];
+  }
+}
 
 export const authOptions: SolidAuthConfig = {
   providers: [
-    // @ts-expect-error Types are wrong
-    DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID as string,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
+    Discord({
+      clientId: serverEnv.DISCORD_ID,
+      clientSecret: serverEnv.DISCORD_SECRET,
     }),
   ],
+  debug: false,
+  basePath: import.meta.env.VITE_AUTH_PATH,
 };

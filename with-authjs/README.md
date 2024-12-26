@@ -1,30 +1,24 @@
 # SolidStart + AuthJS
 
+## Setup a Discord app
+
+In order to run this example, you need to setup i.e. a Discord app in here: https://discord.com/developers/applications/, to get a client secret and client id which should be added to the .env file. Also, in the Discord app settings under OAuth2, set the Return URL to: http://localhost:3000/api/auth/callback/discord
+
+## AuthJS
+
 Everything you need to build an [AuthJS](https://authjs.dev/) authenticated Solid project, powered by [`solid-start`](https://start.solidjs.com);
 
-## Creating a project
+This will start a production server on port `3000`.
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+### Enviroment Variables
 
-# create a new project in my-app
-npm init solid@latest my-app
-```
+- `DISCORD_ID`=
+- `DISCORD_SECRET`=
+- `AUTH_SECRET`=b198e07a64406260b98f06e21c457b84
+- `AUTH_TRUST_HOST`=true
+- `AUTH_URL`=http://localhost:3000
+- `VITE_AUTH_PATH`=/api/auth
 
-## Developing
+[Sponsor Create JD App](https://github.com/sponsors/OrJDev)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Solid apps are built with _adapters_, which optimise your project for deployment to different environments.
-
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different adapter, add it to the `devDependencies` in `package.json` and specify in your `vite.config.js`.
+## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
