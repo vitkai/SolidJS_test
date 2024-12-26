@@ -29,14 +29,18 @@ const MyChart = () => {
             label: 'Vertical',
             data: [, , 0, , ],
         },
-
       ],
   }
   
   const chartOptions = {
       responsive: true,
       maintainAspectRatio: false,
-      fill: 2,
+      plugins: {
+        title: {
+            display: true,
+            text: 'Solid Chart.js implementation',
+        }
+      },
   }
 
   return (
